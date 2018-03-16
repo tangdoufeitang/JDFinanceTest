@@ -1,14 +1,15 @@
 <template lang="html">
-    <select :class=[cname]>
-        <swiper :option="options" :ont-next-tick="options.notNextTick">
-            <swiper-slide v-for="item in items" :key="item.href">
-                <router-link :to={name: item.href}>
+    <section :class="cname">
+        <swiper :options="options" :not-next-tick="options.notNextTick">
+            <swiper-slide v-for="item in items" :key="item.src">
+                <router-link :to="{name: item.href}">
                     <img :src="item.src" alt="">
                 </router-link>
             </swiper-slide>
-            <div class="swiper-pagination" v-if="options.pagination"/>
+           <div class="swiper-pagination" v-if="options.pagination" slot="pagination"/>
         </swiper>
-    </select>
+    </section>
+   
 </template>
 
 <script>
@@ -27,19 +28,19 @@ export default {
       type: Object,
       default() {
         return {
-          autoplay: true,
-          loop: true,
-          pagination: {
-            el: ".swiper-pagination"
-          },
-          notNextTick: false
+            autoplay: true,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            notNextTick: false,
         };
       }
     },
     items: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     }
   }

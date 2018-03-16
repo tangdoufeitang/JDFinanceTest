@@ -1,14 +1,19 @@
 <template lang="html">
-    <Heador/>
+    <div>
+      <Heador/>
+      <Hslider/>
+    </div>
 </template>
 
 <script>
-import Heador from './../public/header'
+import Heador from "./../public/header";
+import Hslider from "./hslider.vue";
 export default {
   components: {
     Heador,
+    Hslider
   }
-}
+};
 </script>
 
 
