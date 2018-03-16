@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+@mixin flex($dirction: column, $display: block) {
+  display: if($display==block, flex, inline-flex);
+  flex-direction: $dirction;
+  flex-wrap: warp;
+}
